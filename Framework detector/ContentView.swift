@@ -154,7 +154,10 @@ struct ContentView: View {
                     Text("Name").tag(true)
                     Text("Architecture").tag(false)
                 }
-                .pickerStyle(.segmented).frame(width: 200)
+                .pickerStyle(.segmented)
+                .fixedSize(horizontal: true, vertical: false)
+                .layoutPriority(1)
+                .clipShape(RoundedRectangle(cornerRadius: 6))
             }
         }
         .sheet(isPresented: $showUpgradeSheet) {
